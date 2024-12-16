@@ -1,0 +1,76 @@
+.filter-header {
+  display: flex;
+  justify-content: space-between; /* Align title to left, filter to right */
+  align-items: center; /* Vertically align items */
+  padding: 20px 30px; /* Add padding above and to the sides */
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: flex-end; /* Ensures the filter is aligned to the right */
+}
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"] {
+  border: solid 1px var(--primary-color, #007bff);
+  padding: 10px;
+  border-radius: 8px;
+  margin-right: 4px;
+  width: 300px; /* Fixed width for consistent appearance */
+}
+
+button.primary {
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.primary:hover {
+  background-color: #0056b3;
+}
+
+.results {
+  display: grid;
+  column-gap: 14px;
+  row-gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+  margin-top: 50px;
+  justify-content: space-around;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+  .results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  input[type="text"] {
+    width: 70%;
+  }
+}
+
+@media (max-width: 499px) {
+  .results {
+    grid-template-columns: 1fr;
+  }
+}
